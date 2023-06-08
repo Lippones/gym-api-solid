@@ -1,12 +1,12 @@
 version: "3"
 
 services:
-  dejord:
-    container_name: dejord
+  gym:
+    container_name: gym
     image: bitnami/postgresql
     ports:
       - 5000:5432
     environment:
-      - POSTGRES_USER=dejord
-      - POSTGRES_PASSWORD=dejord
-      - POSTGRES_DB=dejord
+      - POSTGRES_USER=Filipe
+      - POSTGRES_PASSWORD=gym
+      - POSTGRES_DB=gym
