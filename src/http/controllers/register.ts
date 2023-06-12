@@ -4,13 +4,13 @@ import { UserAlreadyExistsError } from "@/use-cases/errors/user-already-exists-e
 import { makeRegisterUseCase } from "@/use-cases/factories/make-register-factory-use-cases";
 
 export async function register(request: FastifyRequest, reply: FastifyReply) {
-    const registerBodyShema = z.object({
+    const registerBodyScheme = z.object({
       name: z.string(),
       email: z.string().email(),
       password: z.string().min(6),
     });
 
-    const { name, email, password } = registerBodyShema.parse(request.body);
+    const { name, email, password } = registerBodyScheme.parse(request.body);
 
     try {
      const registerUseCase = makeRegisterUseCase()
